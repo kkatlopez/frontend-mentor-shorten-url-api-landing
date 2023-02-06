@@ -1,0 +1,60 @@
+@use '/src/App' as v;
+
+.navbar {
+    padding: 1.5rem 6.25rem;
+
+    .nav-link {
+        color: v.$gray-violet;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+    .navbar-toggler {
+        border: 0;
+    }
+
+    // Desktop
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+        .btn {
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    // Mobile
+    @media only screen and (max-width: map-get(v.$grid-breakpoints, md)) {
+        padding: 1rem; 
+        
+        .navbar-nav {
+            border-bottom: 1px solid v.$gray;
+            padding: 0.75rem 0;
+        }
+        .nav-link {
+            color: v.$white;
+            text-align: center;
+            font-size: 1rem;
+            padding: 0.75rem 0;
+        }
+        .navbar-collapse {
+            background-color: v.$violet;
+            color: v.$white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            padding-top: 0.5rem;
+            margin-top: 1rem;
+            
+            &.nav-btns {
+                margin-top: 0;
+            }
+            > .btn {
+                width: 100%;
+                font-size: 1rem;
+                margin: 0.5rem 0;
+                
+                &.btn-secondary {
+                    background-color: v.$violet;
+                    border: 1px solid v.$violet;
+                    color: v.$white;
+                }
+            }
+        }
+    }
+}

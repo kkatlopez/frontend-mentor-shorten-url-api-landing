@@ -1,0 +1,21 @@
+@use '/src/App' as v;
+
+#statistics-container {
+    padding: 2rem;
+    background-color: v.$pastel-blue;
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -1px;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    p {
+        font-size: 0.9rem;
+        letter-spacing: 0px;
+        line-height: 1.75rem;
+        font-weight: 500;
+        text-align: center;
+        color: v.$gray-violet;
+    }
+}

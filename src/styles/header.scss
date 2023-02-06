@@ -1,0 +1,73 @@
+@use '/src/App' as v;
+
+.container-fluid {
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+        .row {
+            flex-direction: row-reverse;
+        }
+    }
+
+    #header-img-container {
+        overflow: hidden;
+        max-width: 100vw;
+    
+        .illustration {
+            width: 530px;
+            overflow: hidden;
+
+            @media only screen and (min-width: map-get(v.$grid-breakpoints, xl)) {
+                width: 650px;
+            }
+        }
+    }
+    
+    #header-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.5rem;
+    
+        h1 {
+            font-weight: 700;
+            text-align: center;
+            color: v.$dark-violet;
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+        p {
+            text-align: center;
+            color: v.$gray-violet;
+        }
+        .btn {
+            padding: 0.55rem 1.25rem;
+            font-size: 1rem;
+            align-self: center;
+        }
+
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
+            padding-left: 6rem;
+            padding-right: 7rem;
+            justify-content: center;
+
+            h1, p {
+                text-align: left;
+            }
+            h1 {
+                font-size: 3.75rem;
+                line-height: 4rem;
+                letter-spacing: -0.75px;
+            }
+            p {
+                font-size: 1.25rem;
+            }
+            .btn {
+                align-self: start;
+                padding: 0.5rem 2rem;
+            }
+        }
+
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, xl)) {
+            padding-left: 7rem;
+        }
+    
+    }
+}

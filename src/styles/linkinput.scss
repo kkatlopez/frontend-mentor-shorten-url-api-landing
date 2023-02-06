@@ -1,0 +1,40 @@
+@use '/src/App' as v;
+
+form {
+    // background-color: v.$gray;
+    background: linear-gradient(180deg, v.$white 50%, v.$pastel-blue 50%);
+    > .row {
+        background-image: url('../images/bg-shorten-mobile.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: v.$violet;
+        background-position: right;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 0.75rem;
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+            background-image: url('../images/bg-shorten-desktop.svg');
+            background-size: 100%;
+            background-position: top;
+            max-width: 82vw;
+            margin: auto;
+            padding: 2rem;
+        }
+    }
+    .form-group {
+        margin-bottom: 2rem;
+    }
+    .form-control {
+        padding: 0.5rem 1rem;
+        @media only screen and (max-width: map-get(v.$grid-breakpoints, md)) {
+            margin-bottom: 1rem;
+        }
+    }
+    .btn {
+        &#submit-link {
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1rem;
+        }
+    }
+}
