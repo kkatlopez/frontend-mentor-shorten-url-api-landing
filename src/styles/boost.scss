@@ -1,0 +1,26 @@
+@use '/src/App' as v;
+
+#boost {
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+        display: flex;
+        justify-content: center;
+        background-image: url("../images/bg-boost-desktop.svg");
+        background-size: cover;
+    }
+    background-image: url("../images/bg-boost-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: v.$violet;
+    padding: 4rem 1rem;
+    h3 {
+        color: v.$white;
+        text-align: center;
+        font-weight: 700;
+    }
+    .btn {
+        padding: 0.5rem 2rem;
+        margin-top: 1.25rem;
+        font-size: 1rem;
+    }
+}

@@ -10,7 +10,7 @@ function Navigation() {
                     <img
                         alt="Shortly logo"
                         src={logo}
-                        class="fluid"
+                        className="fluid"
                     />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

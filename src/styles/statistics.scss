@@ -18,4 +18,40 @@
         text-align: center;
         color: v.$gray-violet;
     }
+
+    #statistics-row {
+        background: linear-gradient(v.$cyan, v.$cyan) no-repeat center/8px 60%;
+    }
+
+    .stat {
+        .img-container {
+            position: relative;
+            z-index: 1000;
+            top: 40px;
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: v.$dark-violet;
+            img {
+                width: 70%;
+                height: 70%;
+                padding: 0.5rem;
+                margin: auto;
+            }
+        }
+        .desc-container {
+            background-color: v.$white;
+            border-radius: 8px;
+            padding: 3rem 1.5rem 1rem 1.5rem;
+            h2 {
+                font-size: 1.25rem;
+            }
+            p {
+                line-height: 1.35rem;
+                font-size: 0.8rem;
+                letter-spacing: -0.25px;
+            }
+        }
+    }
 }

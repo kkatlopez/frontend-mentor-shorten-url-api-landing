@@ -2,7 +2,7 @@
 
 .container-fluid {
     @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
-        .row {
+        #header-row {
             flex-direction: row-reverse;
         }
     }

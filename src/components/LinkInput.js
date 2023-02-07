@@ -5,12 +5,12 @@ function LinkInput() {
     return(
         <Form className="p-3">
             <Row>
-                <Col md="12" lg="9">
+                <Col md="12" lg="9" className="input">
                     <Form.Group controlId="input-link" size="lg">
                         <Form.Control type="text" placeholder="Shorten a link here..."></Form.Control>
                     </Form.Group>
                 </Col>
-                <Col md="12" lg="3">
+                <Col md="12" lg="3" className="shorten-btn">
                     <Button variant="primary" size="lg" type="submit" id="submit-link">
                         Shorten It!
                     </Button>

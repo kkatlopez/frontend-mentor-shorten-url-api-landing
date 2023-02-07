@@ -1,0 +1,40 @@
+@use '/src/App' as v;
+
+#footer {
+    background-color: v.$dark-violet;
+    padding: 2rem 2rem;
+    display: flex;
+    color: v.$white;
+    text-align: center;
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+        text-align: left;
+        padding: 3rem 2rem;
+    }
+    .logo {
+        filter: brightness(0) invert(1);
+        padding: 2rem 0;
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+            padding: 0;
+        }
+    }
+    .footer-header {
+        font-weight: 700;
+    }
+    .nav {
+        margin-bottom: 2rem;
+        flex-direction: column;
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+            margin-bottom: 0;
+        }
+        .nav-link {
+            color: v.$gray;
+            font-size: 0.875rem;
+            @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+                padding-left: 0;
+            }
+        }
+    }
+    .social-icons {
+        justify-content: space-evenly;
+    }
+}

@@ -5,11 +5,11 @@ import illustration from '../images/illustration-working.svg';
 function Header() {
     return(
         <Container fluid className="mb-5">
-            <Row class="d-flex flex-column">
+            <Row id="header-row" className="d-flex">
                 <Col md="12" lg="4" xl="5" id="header-img-container">
                     <img
                         src={illustration}
-                        class="illustration"
+                        className="illustration"
                         alt="Working illustration"
                     />
                 </Col>
