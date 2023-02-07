@@ -29,6 +29,9 @@
         .nav-link {
             color: v.$gray;
             font-size: 0.875rem;
+            &:hover {
+                color: v.$cyan;
+            }
             @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
                 padding-left: 0;
             }

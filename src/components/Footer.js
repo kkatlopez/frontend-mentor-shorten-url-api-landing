@@ -40,10 +40,10 @@ function Footer() {
                         </Nav>
                     </Col>
                     <Col md="12" lg="2" className="d-flex social-icons mb-3">
-                        <Nav.Link><img src={facebook}/></Nav.Link>
-                        <Nav.Link><img src={twitter}/></Nav.Link>
-                        <Nav.Link><img src={pinterest}/></Nav.Link>
-                        <Nav.Link><img src={instagram}/></Nav.Link>
+                        <Nav.Link><img src={facebook} alt="Facebook logo"/></Nav.Link>
+                        <Nav.Link><img src={twitter} alt="Twitter logo"/></Nav.Link>
+                        <Nav.Link><img src={pinterest} alt="Pinterest logo"/></Nav.Link>
+                        <Nav.Link><img src={instagram} alt="Instagram logo"/></Nav.Link>
                     </Col>
                 </Row>
             </footer>

@@ -36,6 +36,15 @@ form {
             margin-bottom: 1rem;
         }
     }
+    .error {
+        color: v.$red;
+        font-size: 0.875rem;
+        font-style: italic;
+    }
+    .error-input {
+        border: 3px solid v.$red;
+
+    }
     .btn {
         &#submit-link {
             border-radius: 8px;
