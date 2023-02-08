@@ -5,30 +5,34 @@ import '../styles/linkinput.scss';
 
 function LinkInput() {
     const [ url, setUrl ] = useState();
-    const [ shortened, setShortened ] = useState();
-    const [ urlList, setUrlList ] = useState([]);
+    const [ savedUrls ] = useState(localStorage.getItem("links"));
+    const [ urlList, setUrlList ] = useState(savedUrls ? JSON.parse(savedUrls) : []);
     const [ error, setError ] = useState();
     const [ errorClass, setErrorClass ] = useState();
-    const prevUrlRef = useRef();
+    const textInput = useRef();
 
     async function onSubmit() {
         var api = "https://api.shrtco.de/v2/shorten?url=" + url;
-        prevUrlRef.current = shortened;
-        console.log(prevUrlRef.current);
+        // prevUrlRef.current = shortened;
+        // console.log(prevUrlRef.current);
         await fetch(api)
             .then(res => res.json())
             .then(
                 (data) => {
                     if (data?.ok) {
-                        console.log(data);
+                        // Set variables from API
                         var shortLink = data?.result.full_short_link;
                         var originalLink = data?.result.original_link;
-                        if (shortLink != prevUrlRef.current) {
-                            setShortened(shortLink);
+                        // Find if URL has already been shortened
+                        var index = urlList.findIndex((item => item[0] === shortLink));
+                        // If URL hasn't been found, set the list
+                        if (index === -1) {
                             var links = [shortLink, originalLink];
                             setUrlList([...urlList, links])
                             setError("");
                             setErrorClass("");
+                            // Clear input after URL is shortened
+                            textInput.current.value = "";
                         } else {
                             setError("URL already shortened")
                             setErrorClass("error-input");
@@ -43,9 +47,9 @@ function LinkInput() {
     }
 
     useEffect(() => {
-        console.log(shortened);
-        console.log(urlList);
-    }, [shortened, urlList])
+        // Save item to local storage
+        localStorage.setItem("links", JSON.stringify(urlList));
+    }, [urlList])
 
     return(
         <Container fluid className="px-0">
@@ -53,7 +57,7 @@ function LinkInput() {
                 <Row>
                     <Col md="12" lg="9" className="input">
                         <Form.Group controlId="input-link" size="lg">
-                            <Form.Control onChange={e => setUrl(e.target.value)} type="url" name="url" placeholder="Shorten a link here..." className={errorClass}></Form.Control>
+                            <Form.Control onChange={e => setUrl(e.target.value)} type="url" name="url" ref={textInput} placeholder="Shorten a link here..." className={errorClass}></Form.Control>
                         </Form.Group>
                         <span className="error">{error}</span>
                     </Col>
@@ -64,7 +68,9 @@ function LinkInput() {
                     </Col>
                 </Row>
             </Form>
-            { urlList.map(url => <Link link={url} />) }
+            { urlList.map((url, i) => 
+                <Link link={url} key={i} />
+            )}
         </Container>
     )
 }

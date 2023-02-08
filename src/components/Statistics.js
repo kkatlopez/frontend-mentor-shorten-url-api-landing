@@ -34,6 +34,7 @@ function Statistics() {
                 <p className="mb-0">Track how your links are performing across the web with our advanced statistics dashboard.</p>
             </Row>
             <Row id="statistics-row">
+                <span className="divider d-none d-lg-block"></span>
                 { stats.map(s => <StatisticDetail stat={s} key={s.id}/>) }
             </Row>
         </Container>

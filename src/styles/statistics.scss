@@ -1,11 +1,15 @@
 @use '/src/App' as v;
 
 #statistics-container {
-    padding: 2rem;
+    padding: 2rem 8% 3rem 8%;
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, xl)) {
+        padding: 2rem 10% 3rem 10%;
+    }
     background-color: v.$pastel-blue;
     #statistics-header {
         @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
             padding: 0 10rem;
+            margin: 2.5rem 0 0 0;
         }
         @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
             padding: 0 12rem;
@@ -29,9 +33,39 @@
 
     #statistics-row {
         background: linear-gradient(v.$cyan, v.$cyan) no-repeat center/8px 60%;
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
+            background: none;
+            padding-bottom: 3rem;
+            position: relative;
+            .divider {
+                background-color: v.$cyan;
+                height: 8px;
+                position: absolute;
+                bottom: 38%;
+                text-align: center;
+                width: 80%;
+                margin-left: 1rem;
+            }
+        }
     }
 
     .stat {
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
+            h2, p { 
+                text-align: left;
+            }
+            &:nth-of-type(1) {
+                position: relative;
+            }
+            &:nth-of-type(2) {
+                position: relative;
+                top: 1.5rem;
+            }
+            &:nth-of-type(3) {
+                position: relative;
+                top: 3rem;
+            }
+        }
         .img-container {
             position: relative;
             z-index: 1000;
@@ -41,6 +75,9 @@
             margin: auto;
             border-radius: 50%;
             background-color: v.$dark-violet;
+            @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
+                margin-left: 1rem;
+            }
             img {
                 width: 70%;
                 height: 70%;

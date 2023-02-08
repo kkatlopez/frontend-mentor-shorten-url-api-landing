@@ -39,5 +39,10 @@
     }
     .social-icons {
         justify-content: space-evenly;
+        > .nav-link > img {
+            &:hover {
+                filter: invert(0%) sepia(86%) saturate(1631%) hue-rotate(128deg) brightness(85%) contrast(90%);
+            }
+        }
     }
 }
