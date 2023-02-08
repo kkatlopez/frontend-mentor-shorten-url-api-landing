@@ -53,3 +53,57 @@ form {
         }
     }
 }
+
+.link-container {
+    background-color: v.$pastel-blue;
+    > .links {
+        border-radius: 0.5rem;
+        margin: 0.75rem;
+        background-color: v.$white;
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+            max-width: 82vw;
+            margin: auto;
+            :nth-of-type(2) {
+                justify-content: end;
+            }
+        }
+        .link {
+            font-weight: 500;
+            @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+                display: flex;
+                align-self: center;
+            }
+        }
+
+        .original-link {
+            border-bottom: 1px solid v.$gray;
+            @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+                border-bottom: 0;
+            }
+            padding: 0.75rem;
+        }
+
+        .short-link {
+            color: v.$cyan;
+            padding: 0.75rem;
+        }
+
+        .copy-btn {
+            padding: 0 0.75rem 0.75rem 0.75rem;
+            border-bottom: 1px solid v.$gray;
+            @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+                padding: 0.75rem;
+                border-bottom: 0;
+            }
+            .btn-primary {
+                width: 100%;
+                border-radius: 8px;
+                font-size: 1rem;
+                &.clicked {
+                    background-color: v.$violet;
+                    border: 1px solid v.$violet;
+                }
+            }
+        }
+    }
+}

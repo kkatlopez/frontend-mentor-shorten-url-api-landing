@@ -29,10 +29,12 @@ function Statistics() {
 
     return(
         <Container fluid id="statistics-container">
-            <h2>Advanced Statistics</h2>
-            <p className="mb-0">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+            <Row id="statistics-header">
+                <h2>Advanced Statistics</h2>
+                <p className="mb-0">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+            </Row>
             <Row id="statistics-row">
-                {stats.map(s => <StatisticDetail stat={s} key={s.id}/>)}
+                { stats.map(s => <StatisticDetail stat={s} key={s.id}/>) }
             </Row>
         </Container>
     )

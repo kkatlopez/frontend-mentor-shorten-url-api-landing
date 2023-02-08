@@ -3,6 +3,14 @@
 #statistics-container {
     padding: 2rem;
     background-color: v.$pastel-blue;
+    #statistics-header {
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+            padding: 0 10rem;
+        }
+        @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
+            padding: 0 12rem;
+        }
+    }
     h2 {
         font-size: 1.5rem;
         font-weight: 700;
