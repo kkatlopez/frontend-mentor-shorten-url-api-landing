@@ -1,10 +1,10 @@
 @use '/src/App' as v;
 
 .navbar {
-    padding: 1.5rem 6.25rem;
+    padding: 1.5rem 1.25rem;
 
     .nav-link {
-        color: v.$gray-violet;
+        // color: v.$gray-violet;
         font-size: 0.8rem;
         font-weight: 700;
         &:hover {
@@ -16,14 +16,14 @@
     }
 
     // Desktop
-    @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
         .btn {
             padding: 0.5rem 1rem;
         }
     }
 
     // Mobile
-    @media only screen and (max-width: map-get(v.$grid-breakpoints, md)) {
+    @media only screen and (max-width: map-get(v.$grid-breakpoints, lg)) {
         padding: 1rem; 
         
         .navbar-nav {

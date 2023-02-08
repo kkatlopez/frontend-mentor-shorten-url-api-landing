@@ -1,7 +1,7 @@
 @use '/src/App' as v;
 
 .container-fluid {
-    @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
         #header-row {
             flex-direction: row-reverse;
         }

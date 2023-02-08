@@ -1,7 +1,7 @@
 @use '/src/App' as v;
 
 #boost {
-    @media only screen and (min-width: map-get(v.$grid-breakpoints, md)) {
+    @media only screen and (min-width: map-get(v.$grid-breakpoints, lg)) {
         display: flex;
         justify-content: center;
         background-image: url("../images/bg-boost-desktop.svg");
